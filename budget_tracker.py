@@ -11,6 +11,8 @@ entertainment = float(input("How much do you spend on entertainment: $"))
 expenses = rent + transportation + food + entertainment
 
 remaining = calculate_remaining(income, expenses)
+savings_percentage = (remaining / income) * 100
+
 print("\n===== MONTHLY BUDGET =====")
 print(f"Income: ${income:.2f}")
 print(f"Rent: ${rent:.2f}")
@@ -20,6 +22,7 @@ print(f"Entertainment: ${entertainment:.2f}")
 
 print(f"Total Expenses: ${expenses:.2f}")
 print(f"Money Remaining: ${remaining:.2f}")
+print(f"Savings Percentage: {savings_percentage:.1f}%")
 print("==========================")
 
 if remaining < 0:
