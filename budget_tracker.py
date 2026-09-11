@@ -21,3 +21,9 @@ print(f"Entertainment: ${entertainment:.2f}")
 print(f"Total Expenses: ${expenses:.2f}")
 print(f"Money Remaining: ${remaining:.2f}")
 print("==========================")
+
+if remaining < 0:
+    print("Warning: You are over budget!")
+else:
+    print("You are within your budget!")
+    
