@@ -1,5 +1,8 @@
 def calculate_remaining(income, expenses):
   return income, expenses
 
-remaining = calculate_remaining(3000, 2200):
-print(remaining)
+income = float(input("2000: $"))
+expenses = float(input(" 1000: $"))
+
+remaining = calculate_remaining(income, expenses):
+print("money remaining:", remaining)
