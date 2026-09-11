@@ -11,4 +11,4 @@ entertainment = float(input("How much do you spend on entertainment: $"))
 expenses = rent + transportation + food + entertainment
 
 remaining = calculate_remaining(income, expenses)
-print("money remaining:", remaining)
+print(f"money remaining: ${remaining:.2f}")
