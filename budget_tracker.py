@@ -3,14 +3,25 @@ def calculate_remaining(income, expenses):
 
 income = float(input("Enter your monthly income: $"))
 
+expenses = []
+amounts = []
+
+category = input("Enter an expense category: ")
+expenses.append(category)
+
+amount = float(input("Enter the amount: $"))
+amounts.append(amount)
+
+custom_expenses = sum(amounts)
+
 rent = float(input("How much do you spend on rent?: $"))
 transportation = float(input("How much do you spend of transportation?: $"))
 food = float(input("How much do you spend on food?: $"))
 entertainment = float(input("How much do you spend on entertainment: $"))
 
-expenses = rent + transportation + food + entertainment
+total_expenses = rent + transportation + food + entertainment + custom_expenses
 
-remaining = calculate_remaining(income, expenses)
+remaining = calculate_remaining(income, total_expenses)
 savings_percentage = (remaining / income) * 100
 
 print("\n===== MONTHLY BUDGET =====")
@@ -20,7 +31,7 @@ print(f"Transportation: ${transportation:.2f}")
 print(f"Food: ${food:.2f}")
 print(f"Entertainment: ${entertainment:.2f}")
 
-print(f"Total Expenses: ${expenses:.2f}")
+print(f"Total Expenses: ${total_expenses:.2f}")
 print(f"Money Remaining: ${remaining:.2f}")
 print(f"Savings Percentage: {savings_percentage:.1f}%")
 print("==========================")
