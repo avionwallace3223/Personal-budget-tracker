@@ -6,11 +6,16 @@ income = float(input("Enter your monthly income: $"))
 expenses = []
 amounts = []
 
-category = input("Enter an expense category: ")
-expenses.append(category)
+while True:
+   category = input("Enter an expense category: ")
 
-amount = float(input("Enter the amount: $"))
-amounts.append(amount)
+   if category.lower() == "done":
+       break 
+
+   amount = float(input("Enter the amount: $"))
+
+   expenses.append(category)
+   amounts.append(amount)
 
 custom_expenses = sum(amounts)
 
@@ -30,6 +35,11 @@ print(f"Rent: ${rent:.2f}")
 print(f"Transportation: ${transportation:.2f}")
 print(f"Food: ${food:.2f}")
 print(f"Entertainment: ${entertainment:.2f}")
+
+print("\nCustome Expenses:")
+
+for i in range(len(expenses)):
+  print(f"{expenses[i]}: ${amounts[i]:.2f}" )
 
 print(f"Total Expenses: ${total_expenses:.2f}")
 print(f"Money Remaining: ${remaining:.2f}")
