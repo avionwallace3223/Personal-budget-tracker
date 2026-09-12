@@ -7,15 +7,20 @@ expenses = []
 amounts = []
 
 while True:
-   category = input("Enter an expense category: ")
+    category = input("Enter an expense category: ")
 
-   if category.lower() == "done":
-       break 
+    if category.lower() == "done":
+        break 
 
-   amount = float(input("Enter the amount: $"))
-
-   expenses.append(category)
-   amounts.append(amount)
+    while True:
+        try:
+            amount = float(input("Enter the amount: $"))
+            break
+        except ValueError:
+           print("Please enter a valid number.")
+  
+    expenses.append(category)
+    amounts.append(amount)
 
 custom_expenses = sum(amounts)
 
