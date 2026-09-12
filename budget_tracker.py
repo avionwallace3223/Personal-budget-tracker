@@ -1,7 +1,7 @@
 def calculate_remaining(income, expenses):
   return income - expenses
 
-def get_expenses(prompt):
+def get_amount(prompt):
     while True:
         try:
             amount = float(input(prompt))
@@ -13,7 +13,7 @@ def get_expenses(prompt):
         except ValueError:
             print("Please enter valid number.")
             
-income = float(input("Enter your monthly income: $"))
+income = get_amount("Enter your monthly income: $")
 
 expenses = []
 amounts = []
@@ -26,7 +26,7 @@ while True:
 
     while True:
         try:
-            amount = float(input("Enter the amount: $"))
+            amount = get_amount("Enter the amount: $")
             
             if amount < 0:
                print("Expense cannot be negative")
@@ -42,10 +42,10 @@ while True:
 
 custom_expenses = sum(amounts)
 
-rent = get_expenses("How much do you spend on rent?: $")
-transportation = get_expenses("How much do you spend of transportation?: $")
-food = get_expenses("How much do you spend on food?: $")
-entertainment = get_expenses("How much do you spend on entertainment: $")
+rent = get_amount("How much do you spend on rent?: $")
+transportation = get_amount("How much do you spend of transportation?: $")
+food = get_amount("How much do you spend on food?: $")
+entertainment = get_amount("How much do you spend on entertainment: $")
 
 total_expenses = rent + transportation + food + entertainment + custom_expenses
 
