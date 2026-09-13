@@ -51,7 +51,7 @@ total_expenses = rent + transportation + food + entertainment + custom_expenses
 
 remaining = calculate_remaining(income, total_expenses)
 savings_percentage = (remaining / income) * 100
-
+  
 print("\n===== MONTHLY BUDGET =====")
 print(f"Income: ${income:.2f}")
 print(f"Rent: ${rent:.2f}")
@@ -67,6 +67,13 @@ for i in range(len(expenses)):
 print(f"Total Expenses: ${total_expenses:.2f}")
 print(f"Money Remaining: ${remaining:.2f}")
 print(f"Savings Percentage: {savings_percentage:.1f}%")
+if remaining > 0:
+    print(f"You saved ${remaining:.2f} this month!")
+elif remaining == 0: 
+      print(" You broke even this month.")
+else:
+    print(f"You overspent by ${abs(remaining):.2f} this month.")
+    
 print("==========================")
 
 if remaining < 0:
