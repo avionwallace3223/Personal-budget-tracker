@@ -52,8 +52,15 @@ total_expenses = rent + transportation + food + entertainment + custom_expenses
 remaining = calculate_remaining(income, total_expenses)
 savings_percentage = (remaining / income) * 100
   
-all_expenses = list(zip(expenses, amounts))
-largest_expense = max(all_expenses, key=lambda expense: expense[1])
+fixed_expenses = [
+    ("Rent", rent),
+    ("Transportation", transportation),
+    ("Food", food),
+    ("Entertainment", entertainment)
+]
+custom_expense_list = list(zip(expenses, amounts))
+overall_expenses = fixed_expenses + custom_expense_list
+largest_expense = max(overall_expenses, key=lambda expense: expense[1])
 
 print("\n===== MONTHLY BUDGET =====")
 print(f"Income: ${income:.2f}")
@@ -61,8 +68,8 @@ print(f"Rent: ${rent:.2f}")
 print(f"Transportation: ${transportation:.2f}")
 print(f"Food: ${food:.2f}")
 print(f"Entertainment: ${entertainment:.2f}")
-print("\nCustom Expenses:")
-print(f"Largest Custom Expense: {largest_expense[0]} ${largest_expense[1]:.2f}")
+print("\nExpenses Summary:")
+print(f"Largest Expense: {largest_expense[0]} ${largest_expense[1]:.2f}")
 
 for i in range(len(expenses)):
   print(f"{expenses[i]}: ${amounts[i]:.2f}" )
